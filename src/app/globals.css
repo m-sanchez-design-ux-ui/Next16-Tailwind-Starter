@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* Switch the `dark:` variant from OS-preference-based to class-based,
+   so it responds to the manual theme toggle instead of (or in addition
+   to) the system setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* Clases de Flowbite en el HTML */
+@source "../../node_modules/flowbite/**/*.js";
+
+/* En tu archivo globals.css */
+@import "../../node_modules/flatpickr/dist/flatpickr.min.css";
+
+/*----------Weight 100-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Thin.ttf");
+  src: url("../fonts/Montserrat-Thin.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 200-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraLight.ttf");
+  src: url("../fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 300-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf");
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 400-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf");
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 500-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf");
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 600-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 700-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf");
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 800-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.ttf");
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Weight 900-----------*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.ttf");
+  src: url("../fonts/Montserrat-Black.ttf") format("truetype");
+  /* You can add more fonts formats here */
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+/*----------Custom Fonts---------*/
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  /* Colores de Marca (Brand) */
+  --color-brand: #1a56db;
+  --color-brand-strong: #1e42af;
+  --color-brand-medium: #3f83f8;
+
+  /* Colores Neutrales para el Modal */
+  --color-neutral-primary-soft: #ffffff;
+  --color-neutral-secondary-medium: #f3f4f6;
+  --color-neutral-tertiary: #e5e7eb;
+  --color-neutral-tertiary-medium: #d1d5db;
+
+  /* Colores de Texto y Bordes */
+  --color-primary: #2563eb; /*Color bg-blue-600*/
+  --color-primary-medium: #3b82f6; /*Color bg-blue-500*/
+  --color-primary-soft: #bfdbfe; /*Color bg-blue-200*/
+  --color-heading: #111827;
+  --color-body: #4b5563;
+  --color-default: #e5e7eb;
+  --color-default-medium: #d1d5db;
+
+  /* Radios de borde (Rounded) */
+  --radius-base: 0.5rem;
+
+  /* Sombras (Shadows) */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  /* FUENTES: Usamos el prefijo --font- para que Tailwind genere las utilidades */
+  --font-montserrat: "Montserrat", sans-serif;
+  
+  /* Sobreescribimos la fuente sans por defecto de Tailwind */
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  /* Usamos color-mix para derivar las opacidades del color primary */
+  --color-primary-loading-shadow-100: var(--color-primary);
+  --color-primary-loading-shadow-50: color-mix(in srgb, var(--color-primary), transparent 50%);
+  --color-primary-loading-shadow-0: color-mix(in srgb, var(--color-primary), transparent 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+/*Clases de Tailwind para overlays */
+.bg-gray-900\/50 {
+  background-color: rgb(17 24 39 / 0.5) !important;
+}
+
+/*----------------------Loading Container-----------------------*/
+
+.animation-custom-pulse {
+  box-shadow: 0 0 0 20px var(--color-primary-loading-shadow-50);
+  transform: scale(0.8);
+  animation: pulse-custom 2s infinite;
+}
+
+@keyframes pulse-custom {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0px var(--color-primary-loading-shadow-100);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 60px var(--color-primary-loading-shadow-0);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/*----------------------Loading Container-----------------------*/
+
+/*----------------------Icon white checkboxes for appearance-none class----------------------*/
+input[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*----------------------Icon white checkboxes for appearance-none class----------------------*/
+/*----------------------Datepicker----------------------*/
+.flatpickr-input-container, 
+.flatpickr-wrapper {
+  width: 100% !important;
+  display: block !important;
+}
+/*----------------------Datepicker----------------------*/
