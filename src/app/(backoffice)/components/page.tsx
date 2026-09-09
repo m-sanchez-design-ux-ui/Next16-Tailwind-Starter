@@ -28,12 +28,12 @@ export default function TemplateComponentsPage() {
     const BREADCRUMB_CONFIG: BreadcrumbItem[] = [
         { 
         text: 'Template Components', 
-        href: '/template-components', 
+        href: '/components', 
         icon: <Package className="size-4" /> 
         },
         { 
         text: 'Text...', 
-        href: '/template-components', 
+        href: '/components', 
         },
         { 
         text: 'Text...', 
@@ -73,7 +73,7 @@ export default function TemplateComponentsPage() {
                     {/*Tertiary Button*/}
                     <button
                         type="button" 
-                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     >
                         <span>
                             Tertiary Button
@@ -83,7 +83,7 @@ export default function TemplateComponentsPage() {
                     {/*Tertiary Button Icon*/}
                     <button
                         type="button" 
-                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     >
                         <Plus className="size-4" />
                         <span>
@@ -146,7 +146,7 @@ export default function TemplateComponentsPage() {
                 {/*Show Default Modal*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => setIsDefaultModalOpen(true)}
                 >
                     <span>
@@ -156,26 +156,17 @@ export default function TemplateComponentsPage() {
                 {/*Show Delete Modal*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => setIsDeleteModalOpen(true)}
                 >
                     <span>
                         Show Delete Modal 
                     </span>
                 </button>  
-                {/*Show Error 500 page*/}
-                <Link
-                    href="/error-500-preview"
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
-                >
-                    <span>
-                        Show Error 500
-                    </span>
-                </Link>
                 {/*Show Loading*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={handleShowLoading}
                 >
                     <span>
@@ -185,7 +176,7 @@ export default function TemplateComponentsPage() {
                 {/*Show Toast Danger*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => notify("Hubo un error al procesar la solicitud.", "toastDanger")}
                 >
                     <span>
@@ -195,7 +186,7 @@ export default function TemplateComponentsPage() {
                 {/*Show Toast Success*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => notify("¡Los cambios se guardaron correctamente!", "toastSuccess")}
                 >
                     <span>
@@ -205,7 +196,7 @@ export default function TemplateComponentsPage() {
                 {/*Show Toast Warning*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => notify("Atención: Tu suscripción está por expirar.", "toastWarning")}
                 >
                     <span>
@@ -215,7 +206,7 @@ export default function TemplateComponentsPage() {
                 {/*Show Toast Info*/}
                 <button
                     type="button" 
-                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                        className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                     onClick={() => notify("Hay nuevas actualizaciones disponibles en el sistema.", "toastInfo")}
                 >
                     <span>
@@ -225,10 +216,19 @@ export default function TemplateComponentsPage() {
                 {/*Show Error 404*/}
                 <Link
                     href="/error-404"
-                    className="flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark transition-colors"
+                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
                 >
                     <span>
                         Show Error 404
+                    </span>
+                </Link>
+                {/*Show Error 500 page*/}
+                <Link
+                    href="/error-500-preview"
+                    className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent hover:dark:bg-gray-900 dark:text-gray-400 dark:border-gray-500 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
+                >
+                    <span>
+                        Show Error 500
                     </span>
                 </Link>
             </div>

@@ -48,7 +48,7 @@ export default function PasswordRecoverPage() {
           {/* Logo Client End */}
 
           {/* Card Start */}
-          <section className="w-full bg-white p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200">
+          <section className="w-full bg-white dark:bg-gray-800 p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="mb-3">
               <h1 className="text-xl font-semibold text-gray-700 mb-1.5 dark:text-white text-center">
                 Recupere su contraseña
@@ -80,7 +80,7 @@ export default function PasswordRecoverPage() {
                     required
                     className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent dark:focus:ring-blue-500 transition-colors duration-200"
                   />
-                  <p className="mt-1 text-sm text-gray-600">
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     Este campo es requerido.
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export default function PasswordRecoverPage() {
             {/* Back to Login Link */}
             <div className="mt-6 text-center">
               <Link
-                href="/login"
+                href="/signin"
                 className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
               >
                 Volver a Iniciar Sesión

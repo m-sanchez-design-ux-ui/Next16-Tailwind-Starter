@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 
 export default function Header({ onOpenSidebar, onOpenDrawer, notificationCount }: HeaderProps) {
+  const router = useRouter();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
@@ -107,13 +109,17 @@ export default function Header({ onOpenSidebar, onOpenDrawer, notificationCount 
                       </Link>
                     </li>
                     <li>
-                      <Link 
-                        href="/logout" 
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white transition-colors"
-                        onClick={() => setIsUserMenuOpen(false)}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          sessionStorage.removeItem('demo-authenticated');
+                          router.push('/signin');
+                        }}
+                        className="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white transition-colors"
                       >
                         Cerrar sesión
-                      </Link>
+                      </button>
                     </li>
                   </ul>
 

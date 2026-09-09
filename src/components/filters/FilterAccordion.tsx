@@ -15,7 +15,7 @@ export default function FilterAccordion() {
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           className={`group flex items-center justify-between w-full p-5 font-medium text-gray-900 dark:text-gray-100 transition-colors
-            ${isOpen ? 'bg-gray-50 dark:bg-gray-700/50' : 'bg-white dark:bg-gray-800'}hover:text-primary dark:hover:text-primary_dark`}
+            ${isOpen ? 'rounded-t-md bg-gray-50 dark:bg-gray-700 dark:bg-gray-700/50' : 'rounded-lg bg-white dark:bg-gray-800 dark:bg-gray-800'}hover:text-primary dark:hover:text-primary_dark active:dark:bg-primary_dark/30`}
         >
           <span className="flex gap-2 items-center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" className={`size-6 fill-none transition-colors ${isOpen ? 'text-primary dark:text-primary_dark' : 'text-gray-500'}`}>
@@ -58,7 +58,7 @@ export default function FilterAccordion() {
               <input 
                   type="text" 
                   placeholder="Ingresar..." 
-                  className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
               />
             </div>
 
@@ -68,7 +68,7 @@ export default function FilterAccordion() {
               <input 
                 type="number" 
                 placeholder="0.00" 
-                className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
               />
             </div>
 
@@ -117,7 +117,7 @@ export default function FilterAccordion() {
                 </div>
                 <input 
                   type="search" 
-                  className="w-full pl-10 px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+                  className="w-full pl-10 px-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
                   placeholder="Buscar..." 
                 />
               </div>
@@ -141,7 +141,7 @@ export default function FilterAccordion() {
             {/*Tertiary Button*/}
             <button
                 type="button" 
-                className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark'
+                className='flex items-center flex-nowrap gap-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-800 dark:border-gray-400 dark:hover:text-primary_dark active:dark:bg-primary_dark/30'
             >
                 <span>
                     Limpiar

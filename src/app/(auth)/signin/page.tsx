@@ -5,9 +5,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
+import { useLoading } from '@/context/LoadingContext';
 
 export default function SignInPage() {
   const router = useRouter();
+  const { setLoading } = useLoading();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -26,16 +28,21 @@ export default function SignInPage() {
     if (!email || password.length < 6) return;
 
     setIsLoading(true);
+    // Same full-screen loading overlay used by the "Show Loading" button
+    // on the template components page (LoadingContext / LoadingScreen).
+    setLoading(true);
     try {
       // DEMO NOTE: this is a portfolio demo with no real backend — any
       // email/password combination that passes basic validation "logs
       // in" after a short simulated delay.
       await new Promise((resolve) => setTimeout(resolve, 700));
+      sessionStorage.setItem('demo-authenticated', 'true');
       router.push('/');
     } catch {
       setLoginError(true);
     } finally {
       setIsLoading(false);
+      setLoading(false);
     }
   };
 
@@ -64,7 +71,7 @@ export default function SignInPage() {
           {/* Logo Client End */}
 
           {/* Card Start */}
-          <section className="w-full bg-white p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200">
+          <section className="w-full bg-white dark:bg-gray-800 p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200 dark:border-gray-700">
             <div className="mb-3">
               <h1 className="text-xl font-semibold text-gray-700 mb-1.5 dark:text-white text-center">
                 ¡Te damos la bienvenida!
@@ -86,10 +93,10 @@ export default function SignInPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="ejemplo@correo.com"
-                  className={`w-full px-4 py-2.5 bg-gray-50 border ${submitted && !email ? 'border-red-500' : 'border-gray-300'} text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all`}
+                  className={`w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border ${submitted && !email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} text-gray-900 dark:text-white dark:placeholder-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-primary_dark focus:border-transparent transition-all`}
                 />
                 {submitted && !email && (
-                  <p className="mt-1 text-sm text-gray-600">El campo es requerido.</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">El campo es requerido.</p>
                 )}
               </div>
 
@@ -105,29 +112,29 @@ export default function SignInPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className={`w-full px-4 py-2.5 bg-gray-50 border ${submitted && password.length < 6 ? 'border-red-500' : 'border-gray-300'} text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all`}
+                    className={`w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border ${submitted && password.length < 6 ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} text-gray-900 dark:text-white dark:placeholder-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-primary_dark focus:border-transparent transition-all`}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600 transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-primary_dark transition-colors"
                     aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                   >
                     {showPassword ? <EyeOff size={20} strokeWidth={1.5} /> : <Eye size={20} strokeWidth={1.5} />}
                   </button>
                 </div>
                 {submitted && !password && (
-                  <p className="mt-1 text-sm text-gray-600">El campo es requerido.</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">El campo es requerido.</p>
                 )}
                 {submitted && password && password.length < 6 && (
-                  <p className="mt-1 text-sm text-gray-600">La contraseña es inválida. Intente nuevamente.</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">La contraseña es inválida. Intente nuevamente.</p>
                 )}
               </div>
 
               {/* Global Login Error */}
               {loginError && (
-                <div className="p-3 rounded-lg bg-red-50 border border-red-200">
-                  <span className="text-sm text-red-600 font-medium text-center block">
+                <div className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
+                  <span className="text-sm text-red-600 dark:text-red-400 font-medium text-center block">
                     El usuario o la contraseña son incorrectos. Intente nuevamente.
                   </span>
                 </div>
@@ -142,9 +149,14 @@ export default function SignInPage() {
                   {isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
                 </button>
 
+                {/* NOTE (demo fork): reminder that this is a mocked login. */}
+                <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
+                  Demo — cualquier email con formato válido y contraseña de 6+ caracteres inicia sesión.
+                </p>
+
                 <Link
                   href="/password-recover"
-                  className="text-sm text-gray-700 hover:text-blue-600 font-medium transition-colors hover:underline"
+                  className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-primary_dark font-medium transition-colors hover:underline"
                 >
                   ¿Olvidaste tu contraseña?
                 </Link>

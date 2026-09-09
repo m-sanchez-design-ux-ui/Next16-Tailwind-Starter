@@ -58,7 +58,7 @@ characters will work.
 
 - **Sign in** (`/signin`)
 - **Dashboard** (`/`)
-- **UI Kit / component library** (`/template-components`) — includes
+- **UI Kit / component library** (`/components`) — includes
   modals, the data table, and a button to preview the 500 error screen.
 - **Grids** (`/grids`)
 - **Help** (`/help`)

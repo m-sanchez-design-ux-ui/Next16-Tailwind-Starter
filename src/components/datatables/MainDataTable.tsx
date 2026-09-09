@@ -182,7 +182,7 @@ useEffect(() => {
                   />
                 </td>
                 <td className="px-4 py-3 flex justify-center">
-                  <Image src={item.imagen} alt={item.nombre} width={40} height={40} className="object-cover rounded-lg bg-gray-100 border border-gray-200" />
+                  <Image src={item.imagen} alt={item.nombre} width={40} height={40} className="min-w-10 max-w-10 min-h-10 max-h-10 object-cover rounded-lg bg-gray-100 border border-gray-200" />
                 </td>
                 <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{item.nombre}</td>
                 <td className="px-4 py-3">{item.sucursal}</td>

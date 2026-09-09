@@ -64,7 +64,7 @@ export default function PasswordChangePage() {
           {/* Logo Client End */}
 
           {/* Card Start */}
-          <section className="w-full bg-white p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200">           
+          <section className="w-full bg-white dark:bg-gray-800 p-4 xl:p-8 rounded-xl transition-shadow duration-300 shadow hover:shadow-lg border border-gray-200 dark:border-gray-700">           
             <div className="mb-3">
               <h1 className="text-xl font-semibold text-gray-700 mb-1.5 dark:text-white text-center">
                 Actualizar Contraseña
@@ -79,7 +79,7 @@ export default function PasswordChangePage() {
                 <div className="flex justify-center">
                   <CheckCircle2 size={48} className="text-green-500" />
                 </div>
-                <p className="text-sm text-gray-600">Tu contraseña ha sido actualizada correctamente.</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Tu contraseña ha sido actualizada correctamente.</p>
                 <Link
                   href="/signin"
                   className="w-full block px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
@@ -90,7 +90,7 @@ export default function PasswordChangePage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {error && (
-                  <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-sm text-red-600 font-medium">
+                  <div className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-sm text-red-600 dark:text-red-400 font-medium">
                     {error}
                   </div>
                 )}
@@ -106,20 +106,20 @@ export default function PasswordChangePage() {
                       type={showNewPassword ? 'text' : 'password'}
                       value={newPassword}
                       onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 outline-none transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white dark:placeholder-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-primary_dark outline-none transition-all"
                       placeholder="••••••••"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowNewPassword(!showNewPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-primary_dark"
                       aria-label={showNewPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                     >
                       {showNewPassword ? <EyeOff size={18} strokeWidth={1.5} /> : <Eye size={18} strokeWidth={1.5} />}
                     </button>
                   </div>
-                  <p className="mt-1 text-sm text-gray-600">Este campo es requerido.</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Este campo es requerido.</p>
                 </div>
 
                 {/* Confirm Password */}
@@ -133,20 +133,20 @@ export default function PasswordChangePage() {
                       type={showConfirmPassword ? 'text' : 'password'}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 outline-none transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white dark:placeholder-gray-500 text-sm rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-primary_dark outline-none transition-all"
                       placeholder="••••••••"
                       required
                     />
                     <button
                       type="button"
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-primary_dark"
                       aria-label={showConfirmPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                     >
                       {showConfirmPassword ? <EyeOff size={18} strokeWidth={1.5} /> : <Eye size={18} strokeWidth={1.5} />}
                     </button>
                   </div>
-                  <p className="mt-1 text-sm text-gray-600">Este campo es requerido.</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">Este campo es requerido.</p>
                 </div>
 
                 <button
@@ -160,7 +160,7 @@ export default function PasswordChangePage() {
                 {/* Back to Login Link */}
                 <div className="mt-6 text-center">
                   <Link
-                    href="/login"
+                    href="/signin"
                     className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
                   >
                     Volver a Iniciar Sesión

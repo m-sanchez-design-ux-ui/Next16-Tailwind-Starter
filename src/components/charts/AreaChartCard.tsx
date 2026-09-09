@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
 
 const Chart = dynamic(() => import("react-apexcharts"), { 
   ssr: false,
@@ -9,6 +10,7 @@ const Chart = dynamic(() => import("react-apexcharts"), {
 });
 
 export const AreaChartCard = () => {
+  const { theme } = useTheme();
   const [hasMounted, setHasMounted] = useState(false);
   // 1. Estados para el dropdown
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -38,6 +40,7 @@ export const AreaChartCard = () => {
     },
     tooltip: {
       enabled: true,
+      theme: theme === "dark" ? "dark" : "light",
       x: { show: false },
     },
     fill: {

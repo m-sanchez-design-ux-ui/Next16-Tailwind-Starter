@@ -55,7 +55,7 @@ export default function ModalDefault({
             <button 
               onClick={onClose}
               type="button" 
-              className="absolute top-5 right-5 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-700 dark:hover:text-primary_dark transition-colors"
+              className="absolute top-5 right-5 text-gray-400 bg-transparent hover:bg-gray-100 hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-700 dark:hover:text-primary_dark active:dark:bg-primary_dark/30 transition-colors"
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 14 14">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
@@ -90,7 +90,7 @@ export default function ModalDefault({
             <button 
               onClick={onClose}
               type="button" 
-              className="py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-600 dark:hover:text-primary_dark transition-all"
+              className="py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-600 dark:hover:text-primary_dark active:dark:bg-primary_dark/30 transition-all"
             >
               {cancelText}
             </button>

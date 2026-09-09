@@ -39,7 +39,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
         <div className="p-3 relative">
           <button 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full group bg-gray-50 hover:bg-gray-100 border border-gray-300 rounded-lg p-2 flex justify-between items-center dark:bg-gray-700 dark:border-gray-600 transition-colors"
+            className="w-full group bg-gray-50 hover:bg-gray-100 border border-gray-300 rounded-lg p-2 flex justify-between items-center dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600 transition-colors"
           >
             <div className="flex items-center gap-2">
                <div className="relative size-8 rounded overflow-hidden">
@@ -56,7 +56,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
           </button>
 
           {isDropdownOpen && (
-            <ul className="absolute left-3 right-3 z-50 bg-white border border-gray-300 shadow-md rounded-lg mt-1 p-2 dark:bg-gray-700 animate-in fade-in zoom-in-95 duration-100">
+            <ul className="absolute left-3 right-3 z-50 bg-white border border-gray-300 shadow-md rounded-lg mt-1 p-2 dark:bg-gray-700 animate-in fade-in zoom-in-95 duration-100 dark:border-gray-600">
               {[
                 { name: 'Seleccionar...', img: '/images/icon-btns/picture.svg' },
                 { name: 'Opción 01', img: '/images/cover/cover-default.svg' },
@@ -90,7 +90,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
               label="Starter kit"
               icon={<Box className="size-6" />}
               items={[
-                { label: "Components", href: "/template-components" }, 
+                { label: "Components", href: "/components" }, 
                 { label: "Grids", href: "/grids" },               
               ]}
             />

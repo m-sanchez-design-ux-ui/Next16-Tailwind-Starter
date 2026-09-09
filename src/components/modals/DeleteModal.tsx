@@ -91,7 +91,7 @@ export default function DeleteModal({
             <button 
               onClick={onClose}
               type="button" 
-              className="py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:ring-4 focus:ring-gray-100 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-600 dark:hover:text-primary_dark transition-all"
+              className="py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:ring-4 focus:ring-gray-100 dark:focus:ring-primary_dark/30 dark:bg-transparent dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-600 dark:hover:text-primary_dark active:dark:bg-primary_dark/30 transition-all"
             >
               {cancelText}
             </button>

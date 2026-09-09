@@ -1,10 +1,13 @@
 "use client"; 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Header from '@/components/Header';
 import Sidebar from "@/components/sidebar/Sidebar";
 import NotificationDrawer from '@/components/drawers/NotificationDrawer'; 
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const [checkedAuth, setCheckedAuth] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [notifications, setNotifications] = useState([
@@ -12,10 +15,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     { mensaje: "El cliente Opción 01 ha actualizado sus archivos." }
   ]);
 
+  // DEMO NOTE: there's no real backend/session here, so "logged in" is
+  // just a flag the signin page sets in sessionStorage. This makes sure
+  // every backoffice screen — not just "/" — starts at /signin first.
+  useEffect(() => {
+    const isAuthenticated = sessionStorage.getItem('demo-authenticated') === 'true';
+    if (!isAuthenticated) {
+      router.replace('/signin');
+      return;
+    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCheckedAuth(true);
+  }, [router]);
+
   const deleteNotification = (index: number) => {
     setNotifications(notifications.filter((_, i) => i !== index));
   };
-  
+
+  if (!checkedAuth) return null;
 
   return (
     <div className="flex h-screen w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">

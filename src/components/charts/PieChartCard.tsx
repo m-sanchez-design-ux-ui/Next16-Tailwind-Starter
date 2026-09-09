@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
 
 // Importación dinámica para evitar errores de SSR con ApexCharts
 const Chart = dynamic(() => import("react-apexcharts"), { 
@@ -10,6 +11,7 @@ const Chart = dynamic(() => import("react-apexcharts"), {
 });
 
 export const PieChartCard = () => {
+  const { theme } = useTheme();
   const [hasMounted, setHasMounted] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -35,6 +37,9 @@ export const PieChartCard = () => {
             width: "100%",
             type: "pie",
             fontFamily: "Montserrat, sans-serif",
+        },
+        tooltip: {
+            theme: theme === "dark" ? "dark" : "light",
         },
         stroke: {
             colors: ["transparent"],

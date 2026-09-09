@@ -12,6 +12,19 @@
 /* En tu archivo globals.css */
 @import "../../node_modules/flatpickr/dist/flatpickr.min.css";
 
+/* Overrides flatpickr's default theme, which hardcodes a red (#f64747)
+   hover fill on the prev/next month arrows — not something set anywhere
+   in this project. Using the design system's primary color instead. */
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: var(--color-primary) !important;
+}
+
+:is(.dark) .flatpickr-months .flatpickr-prev-month:hover svg,
+:is(.dark) .flatpickr-months .flatpickr-next-month:hover svg {
+  fill: var(--color-primary_dark) !important;
+}
+
 /*----------Weight 100-----------*/
 @font-face {
   font-family: "Montserrat";
@@ -125,6 +138,12 @@
   --color-primary: #2563eb; /*Color bg-blue-600*/
   --color-primary-medium: #3b82f6; /*Color bg-blue-500*/
   --color-primary-soft: #bfdbfe; /*Color bg-blue-200*/
+  /* Primary color used in dark mode (dark:*) utilities — a lighter
+     shade than --color-primary so it stays visible against dark
+     backgrounds. Was referenced throughout the app (dark:text-primary_dark,
+     etc.) but never actually defined, so those utilities were silently
+     no-ops until now. */
+  --color-primary_dark: #3b82f6; /*Color bg-blue-500*/
   --color-heading: #111827;
   --color-body: #4b5563;
   --color-default: #e5e7eb;
