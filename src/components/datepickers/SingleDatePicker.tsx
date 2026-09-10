@@ -43,6 +43,7 @@ export default function SingleDatePicker({
             locale: Spanish,
             dateFormat: 'd/m/Y',
             static: true,
+            disableMobile: true,
           }}
           placeholder={placeholder}
           // Usamos las mismas clases de Flowbite para consistencia

@@ -32,7 +32,7 @@ export default function RangeDatePicker({ label, onChange, value = null, classNa
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none z-10"><Calendar className="w-4 h-4 text-gray-500" /></div>
         <Flatpickr
           value={dates ?? []}
-          options={{ mode: "range", locale: Spanish, dateFormat: "d/m/Y", allowInput: false, static: true }}
+          options={{ mode: "range", locale: Spanish, dateFormat: "d/m/Y", allowInput: false, static: true, disableMobile: true }}
           onChange={(selectedDates: Date[]) => { const newDates = selectedDates.length ? selectedDates : null; setDates(newDates); if (onChange) onChange(newDates); }}
           className="[input]:w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 outline-none transition-all"
           placeholder={placeholder}
